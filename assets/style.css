@@ -4,11 +4,28 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
   }
+  header {
+    background: linear-gradient(300deg, #00bfff, blue, indigo);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
 body {
     background: #E3F2FD;
   }
   h1 {
-    background: #5372F0;
     font-size: 1.75rem;
     text-align: center;
     padding: 18px 0;
@@ -68,10 +85,10 @@ body {
   .weather-user-input .search-btn:hover {
     background: #2c52ed;
   }
-  .weather-user-input .location-btn {
+  .weather-user-input .history-btn {
     background: #6C757D;
   }
-  .weather-user-input .location-btn:hover {
+  .weather-user-input .history-btn:hover {
     background: #5c636a;
   }
   .weather-display {
@@ -79,11 +96,13 @@ body {
   }
   .weather-display .current-weather {
     color: #fff;
-    background: #5372F0;
     border-radius: 5px;
     padding: 20px 70px 20px 20px;
     display: flex;
     justify-content: space-between;
+    background: linear-gradient(300deg, #00bfff, blue, aqua);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
   }
   .current-weather h2 {
     font-weight: 700;
