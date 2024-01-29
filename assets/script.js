@@ -3,7 +3,7 @@ var searchButton = document.querySelector(".search-btn");
 var forecastCards = document.querySelector(".forecast-cards")
 
 // API Key
-const apiKey = "048bc7be255772a31199cccc135b1113"; 
+const apiKey = ""; 
 
 //
 const createWeatherCard = (weatherItem) => {
