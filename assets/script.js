@@ -1,19 +1,22 @@
 var city = document.querySelector("#city-search");
 var searchButton = document.querySelector(".search-btn");
+var forecastCards = document.querySelector(".forecast-cards")
 
 // API Key
-const apiKey = ""; 
+const apiKey = "048bc7be255772a31199cccc135b1113"; 
 
+//
 const createWeatherCard = (weatherItem) => {
     return `<li class="card">
-    <h3>(${weatherItem.dt_txt.split(" ")[0]})</h3>
-    <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
-    <h6>Temp: ${(weatherItem.main.temp - 273.15).toFixed(2)}°C</h6>
-    <h6>Wind: ${weatherItem.wind.speed} M/S</h6>
-    <h6>Humidity: ${weatherItem.main.humidity}%</h6>
-</li>`;
+               <h3>(${weatherItem.dt_txt.split(" ")[0]})</h3>
+               <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
+               <h6>Temp: ${(weatherItem.main.temp - 273.15).toFixed(2)}°C</h6>
+               <h6>Wind: ${weatherItem.wind.speed} M/S</h6>
+               <h6>Humidity: ${weatherItem.main.humidity}%</h6>
+            </li>`;
 }
 
+//fetch  forecast weather sing latitude and longitude to identify entered city
 const getWeatherData = (cityName, lat, lon) => {
     const FORECAST_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
@@ -32,6 +35,7 @@ const getWeatherData = (cityName, lat, lon) => {
 
         console.log(fiveDaysForecast);
         fiveDaysForecast.forEach(weatherItem => {
+            forecastCards.insertAdjacentHTML("beforeend", createWeatherCard(weatherItem));
             createWeatherCard(weatherItem);
         });
 
