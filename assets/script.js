@@ -33,6 +33,10 @@ const getWeatherData = (cityName, lat, lon) => {
 
         });
 
+        // removes previous weather data
+        city.value = "";
+        forecastCards.innerHTML = "";
+
         console.log(fiveDaysForecast);
         fiveDaysForecast.forEach(weatherItem => {
             forecastCards.insertAdjacentHTML("beforeend", createWeatherCard(weatherItem));
