@@ -1,10 +1,11 @@
 var city = document.querySelector("#city-search");
 var searchButton = document.querySelector(".search-btn");
 var currentWeather = document.querySelector(".current-weather");
-var forecastCards = document.querySelector(".forecast-cards")
+var forecastCards = document.querySelector(".forecast-cards");
+var historyButton = document.querySelector(".history-btn");
 
 // API Key
-const apiKey = "048bc7be255772a31199cccc135b1113"; 
+const apiKey = "YOUR-API-KEY-HERE"; 
 
 //
 const createWeatherCard = (cityName, weatherItem, index) => {
@@ -53,6 +54,7 @@ const getWeatherData = (cityName, lat, lon) => {
         forecastCards.innerHTML = "";
 
 
+
         //Five day forecast cards
         console.log(fiveDaysForecast);
         fiveDaysForecast.forEach((weatherItem, index) => {
@@ -87,5 +89,26 @@ const getCoordinates = () => {
 
 }
 
-searchButton.addEventListener("click", getCoordinates);
+// get stored tasks
+let taskData = JSON.parse(localStorage.getItem('taskData')) || [];
+
+const searchItems = () => {
+    historyButton.innerHTML = "cityName";
+
+}
+
+
+//Search History 
+// const addSearchHistory = (cityName, index) => {
+//     const searchHistory = document.getElementById("history");
+//     const btn = document.createElement("BUTTON");
+//     btn.innerHTML = cityName;
+//     btn.id = "search-btn";
+//     btn.class = "search-history";
+//     btn.type = "submit";
+//     document.body.appendChild(btn);
+
+// }
+
+searchButton.addEventListener("click", getCoordinates, searchItems);
 
