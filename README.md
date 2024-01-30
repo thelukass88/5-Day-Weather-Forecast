@@ -5,10 +5,11 @@
 Repo:
 https://github.com/thelukass88/5-Day-Weather-Forecast
 Live page:
+https://thelukass88.github.io/5-Day-Weather-Forecast/
 
 ## Useage
-(assets/Image 30-01-2024 at 23.25 (1).png)
-(assets/Image 30-01-2024 at 23.25.png)
+(./assets/Image 30-01-2024 at 23.25 (1).png)
+(./assets/Image 30-01-2024 at 23.25.png)
 
 ## Description
 
